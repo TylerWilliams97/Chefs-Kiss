@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS chefkiss_db;
+
+CREATE DATABASE chefkiss_db;
