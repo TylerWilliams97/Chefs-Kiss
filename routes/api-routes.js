@@ -2,8 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-
-module.exports = (app) => {
+module.exports = app => {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -53,28 +52,22 @@ module.exports = (app) => {
   });
 
   app.post("/api/members/post", isAuthenticated, (req, res) => {
-    // recipe_name , ingredients, description 
+    // recipe_name , ingredients, description
     db.Recipies.create({
-      recipe_name: req.body.recipe_name,
+      recipeName: req.body.recipe_name,
       ingredients: req.body.ingredients,
-      description: req.body.description,
-
-    }).then((results) => res.json(results));
-
+      description: req.body.description
+    }).then(results => res.json(results));
   });
 
-  app.get("/api/recipes/post", isAuthenticated, (req,res) => {
-    Recipies.findall({}).then((result) => res.json(results));
+  app.get("/api/recipes/post", isAuthenticated, (req, res) => {
+    Recipies.findall({}).then(result => res.json(result));
+  });
 
-  })
-
-
-  app.delete("/api/recipes/:id", (req, res) => {
+  app.delete("/api/recipes/:id", req => {
     const id = req.params.id;
     db.Recipies.destroy({
-      where: {id}
-    }).then((deletedRecipe) => (deletedRecipe));
-
+      where: { id }
+    }).then(deletedRecipe => deletedRecipe);
   });
-
 };
