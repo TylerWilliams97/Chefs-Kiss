@@ -9,12 +9,12 @@
   <!-- materializeCSS -->
   <!--Import Google Icon Font-->
   <!--Import materialize.css-->
-<!-- Compiled and minified CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-        
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -25,16 +25,16 @@
 <body>
   <!-- navbar wip -->
   <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo center">Chef's Kiss</a>
+    <div class="nav-wrapper amber darken-3">
+      <a href="#!" class="brand-logo center"><img
+          src="https://www.freelogodesign.ca/share/21a67d60fb6347f598fa657942b0bba9" alt="Chef's Kiss"></a>
       <ul class="left hide-on-med-and-down">
         <li><a href="https://twitter.com/TweetsChefs">Twitter</a></li>
-        <li><a href="badges.html">Instagram</a></li>
+        <li><a href="https://www.facebook.com/Chefs-Kiss-196604171909531">Facebook</a></li>
         <li class="active"><a href="collapsible.html">JavaScript</a></li>
       </ul>
     </div>
   </nav>
-        
 
   <!-- playing with forms for recipe search -->
   <form id="recipeForm">
@@ -57,27 +57,54 @@
       <input type="imgLinkInput" class="form-control" id="exampleFormControlInput1"
         placeholder="Insert Image Link here">
     </div>
-  </form>
+  </div>
+
+  <!-- An extra card here to represent multiple results when searching recipes. -->
+  <!-- Currently commented out to prevent cluttering until we get the first card operational -->
+
 
 
   <!-- recipe card WIP -->
-  <div class="card mb-3" style="max-width: 560px;">
-    <div class="row no-gutters">
-      <div class="col-md-6 ">
-        <img src="https://i.imgur.com/D4MJ7hD.jpeg" class="card-img" alt="...">
+  <div class="col s12 m7">
+    <h2 class="header">Recipe Name</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <!-- this is a temporary placeholder image. needs to be replaced by actual search results -->
+        <img src="https://i.imgur.com/D4MJ7hD.jpeg">
       </div>
-      <div class="col-md-6">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-            content.
-            This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">-Brought to you by Chef's Kiss</small></p>
-
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>
+          <h4>Instructions</h4> <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste error dolorum ut rerum
+          incidunt ad vero dicta ex tenetur. Nihil, nemo. Iusto soluta enim fuga, asperiores error voluptatum fugit
+          expedita.
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="#">Want to see more?</a>
         </div>
       </div>
     </div>
   </div>
+  <!-- An extra card here to represent multiple results when searching recipes. -->
+  <!-- Currently commented out to prevent cluttering until we get the first card operational -->
+  <!-- <div class="col s12 m7">
+  <h2 class="header">Recipe Name</h2>
+  <div class="card horizontal">
+    <div class="card-image">
+      <img src="https://i.imgur.com/D4MJ7hD.jpeg">
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p><h4>Instructions</h4> <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste error dolorum ut rerum incidunt ad vero dicta ex tenetur. Nihil, nemo. Iusto soluta enim fuga, asperiores error voluptatum fugit expedita.
+        </p>
+      </div>
+      <div class="card-action">
+        <a href="#">Want to see more?</a>
+      </div>
+    </div>
+  </div>
+</div> -->
 
 
   <script type="text/javascript" src="js/materialize.min.js"></script>
