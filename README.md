@@ -2,8 +2,8 @@
 
 # Wireframe
 
-![index](images\ChefsKissIndex.png)
-![Recipe](images\RecipePage-Page-1.png)
+![index](./images/ChefsKissIndex.png)
+![Recipe](./images/RecipePage-Page-1.png)
 
 
 
