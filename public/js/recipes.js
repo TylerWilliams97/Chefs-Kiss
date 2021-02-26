@@ -44,7 +44,6 @@ const recipeFormSubmit = e => {
   } else {
     submitRecipe(newRecipe);
   }
-  
 };
 
 recipeForm.addEventListener("submit", recipeFormSubmit);

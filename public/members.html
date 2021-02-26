@@ -24,6 +24,7 @@
 
 <body>
   <!-- navbar wip -->
+
   <nav>
     <div class="nav-wrapper amber darken-3">
       <a href="#!" class="brand-logo center"><img
@@ -36,11 +37,49 @@
     </div>
   </nav>
 
-  <!-- playing with forms for recipe search -->
-  <form id="recipeForm">
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Recipe</label>
-      <input type="recipeInput" class="form-control" id="recipeName" placeholder="Insert Recipe Here">
+  <!-- card for search form -->
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card red darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Post Recipe </span>
+          <p>
+          <form>
+            <div class="form-group">
+              <label for="Recipe">Recipe</label>
+              <input type="recipeInput" class="form-control" id="recipeInput"
+                placeholder="Insert Recipe Here">
+            </div>
+            <div class="form-group">
+              <label for="Description">Description</label>
+              <input type="descriptionInput" class="form-control" id="descriptionInput"
+                placeholder="Insert Description Here">
+            </div>
+            <div class="form-group">
+              <label for="Ingredients">Ingredients</label>
+              <input type="ingredientInput" class="form-control" id="ingredientInput"
+                placeholder="Insert Ingredients Here">
+            </div>
+            <div class="form-group">
+              <label for="instructionsInput">Instructions</label>
+              <textarea class="form-control" id="instructionInput" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="imageLinkInput">Image Link</label>
+              <input type="imgLinkInput" class="form-control" id="imgLinkInput" placeholder="Insert Image Link here">
+            </div>
+            <div class="card-action">
+              <div class="card-action ">
+              <button class="btn waves-effect waves-light amber darken-3" type="submit" name="action" id=""><span class="grey-text text-lighten-5">Post</span>
+                <i class="material-icons right"></i>
+              </button>
+            </div>
+          </form>
+          </p>
+        </div>
+        
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Ingredients</label>
@@ -76,9 +115,12 @@
       <div class="card-stacked">
         <div class="card-content">
           <p>
-          <h4>Instructions</h4> <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste error dolorum ut rerum
-          incidunt ad vero dicta ex tenetur. Nihil, nemo. Iusto soluta enim fuga, asperiores error voluptatum fugit
-          expedita.
+            <ul class="collection">
+              <li class="collection-item">Recipe Title</li>
+              <li class="collection-item">Description</li>
+              <li class="collection-item">Ingredients</li>
+              <li class="collection-item">Instructions</li>
+            </ul>
           </p>
         </div>
         <div class="card-action">
@@ -87,25 +129,7 @@
       </div>
     </div>
   </div>
-  <!-- An extra card here to represent multiple results when searching recipes. -->
-  <!-- Currently commented out to prevent cluttering until we get the first card operational -->
-  <!-- <div class="col s12 m7">
-  <h2 class="header">Recipe Name</h2>
-  <div class="card horizontal">
-    <div class="card-image">
-      <img src="https://i.imgur.com/D4MJ7hD.jpeg">
-    </div>
-    <div class="card-stacked">
-      <div class="card-content">
-        <p><h4>Instructions</h4> <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste error dolorum ut rerum incidunt ad vero dicta ex tenetur. Nihil, nemo. Iusto soluta enim fuga, asperiores error voluptatum fugit expedita.
-        </p>
-      </div>
-      <div class="card-action">
-        <a href="#">Want to see more?</a>
-      </div>
-    </div>
-  </div>
-</div> -->
+
 
 
   <script type="text/javascript" src="./js/recipes.js"></script>
