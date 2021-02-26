@@ -11,12 +11,21 @@ module.exports = (sequelize, Datatypes) => {
     ingredients: {
       type: Datatypes.STRING,
       allowNull: false,
+      defaultValue: "1",
       validation: {
         len: [1, 1000]
       }
     },
 
     description: {
+      type: Datatypes.STRING,
+      allowNull: false,
+      validation: {
+        len: [1, 1000]
+      }
+    },
+
+    instructions: {
       type: Datatypes.STRING,
       allowNull: false,
       validation: {

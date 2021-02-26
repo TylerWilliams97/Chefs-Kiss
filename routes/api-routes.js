@@ -52,18 +52,32 @@ module.exports = app => {
     }
   });
 
-  app.post("/api/members/post", isAuthenticated, (req, res) => {
+  app.post("/api/members/post", (req, res) => {
     // recipe_name , ingredients, description
-    db.Recipies.create({
-      recipeName: req.body.recipe_name,
+    db.Recipe.create({
+      recipeName: req.body.recipeName,
       ingredients: req.body.ingredients,
-      description: req.body.description
-    }).then(results => res.json(results));
+      description: req.body.description,
+      instructions: req.body.instructions
+    }).then(results => {
+      res.json(results);
+      console.log(results);
+    });
   });
 
-  app.get("/api/recipes/post", isAuthenticated, (req, res) => {
-    Recipies.findall({}).then(result => res.json(result));
+  app.get("/api/recipes/post", (req, res) => {
+    Recipe.findall({}).then(result => {
+      res.json(result);
+    });
   });
+
+  // app.get("/api/recipes/post/:id", (req, res) => {
+  //   Recipie.findone({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(result => res.json(result));
+  // });
 
   app.delete("/api/recipes/:id", req => {
     const id = req.params.id;
