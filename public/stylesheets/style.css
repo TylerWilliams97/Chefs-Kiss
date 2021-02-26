@@ -2,3 +2,12 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+body {
+  background-image: url('https://cdn.pixabay.com/photo/2014/10/22/16/38/ingredients-498199_1280.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+.card {
+  opacity: .85;
+}
