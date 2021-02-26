@@ -23,6 +23,14 @@ module.exports = (sequelize, Datatypes) => {
       validation: {
         len: [1, 1000]
       }
+    },
+
+    instructions: {
+      type: Datatypes.STRING,
+      allowNull: false,
+      validation: {
+        len: [1, 1000]
+      }
     }
   });
 
