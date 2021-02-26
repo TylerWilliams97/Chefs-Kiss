@@ -11,6 +11,7 @@ module.exports = (sequelize, Datatypes) => {
     ingredients: {
       type: Datatypes.STRING,
       allowNull: false,
+      defaultValue: "1",
       validation: {
         len: [1, 1000]
       }

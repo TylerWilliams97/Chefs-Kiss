@@ -53,24 +53,24 @@ module.exports = app => {
 
   app.post("/api/members/post", (req, res) => {
     // recipe_name , ingredients, description
-    db.Recipies.create({
-      recipeName: req.body.recipe_name,
+    db.Recipe.create({
+      recipeName: req.body.recipeName,
       ingredients: req.body.ingredients,
       description: req.body.description
     }).then(results => res.json(results));
   });
 
   app.get("/api/recipes/post", (req, res) => {
-    Recipies.findall({}).then(result => res.json(result));
+    Recipe.findall({}).then(result => res.json(result));
   });
 
-  app.get("/api/recipes/post/:id", (req, res) => {
-    Recipies.findone({
-      where: {
-        id: req.params.id
-      }
-    }).then(result => res.json(result));
-  });
+  // app.get("/api/recipes/post/:id", (req, res) => {
+  //   Recipies.findone({
+  //     where: {
+  //       id: req.params.id
+  //     }
+  //   }).then(result => res.json(result));
+  // });
 
   app.delete("/api/recipes/:id", req => {
     const id = req.params.id;
