@@ -51,7 +51,7 @@ module.exports = app => {
     }
   });
 
-  app.post("/api/members/post", isAuthenticated, (req, res) => {
+  // app.post("/api/members/post", isAuthenticated, (req, res) => {
     // recipe_name , ingredients, description
     db.Recipies.create({
       recipeName: req.body.recipe_name,

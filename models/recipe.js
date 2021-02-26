@@ -22,6 +22,10 @@ module.exports = (sequelize, Datatypes) => {
       validation: {
         len: [1, 1000]
       }
+    },
+
+    image: {
+      type: Datatypes.STRING
     }
   });
 
