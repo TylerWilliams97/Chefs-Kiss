@@ -27,41 +27,65 @@
   <!-- navbar wip -->
 
   <nav>
-    <div class="nav-wrapper amber darken-3">
-      <a href="#!" class="brand-logo center"><img
-          src="https://www.freelogodesign.ca/share/21a67d60fb6347f598fa657942b0bba9" alt="Chef's Kiss"></a>
-      <ul class="left hide-on-med-and-down">
-        <li><a href="https://twitter.com/TweetsChefs">Twitter</a></li>
-        <li><a href="https://www.facebook.com/Chefs-Kiss-196604171909531">Facebook</a></li>
-        <li class="active"><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
+    <nav class="Transparent">
+      <div class="nav-wrapper N/A Transparent">
+        <div id=""><a href="/public/members.html" class="brand-logo center"><img
+              src="C:\Users\josep\Bootcamp\Project2\images\ChefsKissLogo.png" alt="Chef's Kiss" id="logoImage"></a>
+        </div>
+        <ul class="left hide-on-med-and-down">
+          <!-- <li><div id="logoImage"><a href="/public/members.html" class="brand-logo center"><img src="C:\Users\josep\Bootcamp\Project2\images\ChefsKissLogo.png" alt="Chef's Kiss"></a></div></li> -->
+          <li><a href="https://twitter.com/TweetsChefs">Twitter</a></li>
+          <li><a href="https://www.facebook.com/Chefs-Kiss-196604171909531">Facebook</a></li>
+          <li><a href="https://www.instagram.com/chefskissblog/">Instagram</a></li>
+
+        </ul>
+      </div>
+    </nav>
   </nav>
 
-  <!-- playing with forms for recipe search -->
-  <form id="recipeForm">
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Recipe</label>
-      <input type="text" class="form-control" id="recipeName" placeholder="Insert Recipe Here">
+
+  <!-- card for search form -->
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card N/A Transparent">
+        <div class="card-content yellow-text">
+          <span class="card-title">Post Recipe </span>
+          <p>
+          <form id="recipeForm">
+            <div class="form-group">
+              <label for="Recipe">Recipe</label>
+              <input type="text" class="form-control" id="recipeName" placeholder="Insert Recipe Here">
+            </div>
+            <div class="form-group">
+              <label for="Description">Description</label>
+              <input type="text" class="form-control" id="description" placeholder="Insert Description Here">
+            </div>
+            <div class="form-group">
+              <label for="Ingredients">Ingredients</label>
+              <input type="text" class="form-control" id="instructions" placeholder="Insert Ingredients Here">
+            </div>
+            <div class="form-group" >
+              <label for="Instructions"></label>
+              <input type="text" class="form-control" id="recipeIng" placeholder="Insert Instructions Here">
+            </div>
+            <div class="form-group">
+              <label for="imageLinkInput">Image Link</label>
+              <input type="text" class="form-control" id="imgLinkInput" placeholder="Insert Image Link here">
+            </div>
+            <div class="card-action">
+              <button class="btn waves-effect waves-light amber darken-3" type="submit" name="action" id=""><span
+                  class="grey-text text-lighten-5">Post</span>
+                <i class="material-icons right"></i>
+              </button>
+            </div>
+          </form>
+          </p>
+        </div>
+
+      </div>
     </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Ingredients</label>
-      <input type="text" class="form-control" id="recipeIng"
-        placeholder="Insert Ingredients Here">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Description</label>
-      <input type="text" class="form-control description " id="description"
-        placeholder="Insert Description Here">
-    </div>
-    <div class="form-group">
-      <label for="exampleFormControlInput1">Image Link</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1"
-        placeholder="Insert Image Link here">
-    </div>
-    <button type="submit" class="btn btn-success submit btn-lg">Submit</button>
   </div>
-  </div>
+
 
   <!-- An extra card here to represent multiple results when searching recipes. -->
   <!-- Currently commented out to prevent cluttering until we get the first card operational -->

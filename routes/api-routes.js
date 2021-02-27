@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = app => {
   // Using the passport.authenticate middleware with our local strategy.
@@ -56,16 +57,22 @@ module.exports = app => {
     db.Recipe.create({
       recipeName: req.body.recipeName,
       ingredients: req.body.ingredients,
-      description: req.body.description
-    }).then(results => res.json(results));
+      description: req.body.description,
+      instructions: req.body.instructions
+    }).then(results => {
+      res.json(results);
+      console.log(results);
+    });
   });
 
   app.get("/api/recipes/post", (req, res) => {
-    Recipe.findall({}).then(result => res.json(result));
+    Recipe.findall({}).then(result => {
+      res.json(result);
+    });
   });
 
   // app.get("/api/recipes/post/:id", (req, res) => {
-  //   Recipies.findone({
+  //   Recipie.findone({
   //     where: {
   //       id: req.params.id
   //     }
