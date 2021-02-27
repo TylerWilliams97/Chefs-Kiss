@@ -2,3 +2,31 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2014/10/22/16/38/ingredients-498199_1280.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.card {
+  /*setting alpha = 0.3*/
+  opacity: 0.85;
+}
+#logoImage {
+  height: 100px;
+  width: auto;
+  max-height: 100px;
+  max-width: 250px;
+}
+nav {
+  /* opacity: .70; */
+  height: 120%;
+  background-color: transparent !important;
+}
+#topCard {
+  margin-top: 25px;
+}
