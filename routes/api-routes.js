@@ -66,7 +66,8 @@ module.exports = app => {
   });
 
   app.get("/api/recipes/post", (req, res) => {
-    Recipe.findall({}).then(result => {
+    db.Recipe.findAll({}).then(result => {
+      console.log(result);
       res.json(result);
     });
   });
@@ -81,8 +82,36 @@ module.exports = app => {
 
   app.delete("/api/recipes/:id", req => {
     const id = req.params.id;
-    db.Recipies.destroy({
+    db.Recipe.destroy({
       where: { id }
     }).then(deletedRecipe => deletedRecipe);
+  });
+
+  app.get("/recipe/:id", (req, res) => {
+    const id = req.params.id;
+    console.log(id);
+    // connection.query("SELECT * FROM recipes WHERE id = @id", (err, results) => {
+    //   if (err) {
+    //     throw err;
+    //   }
+    //   console.log(results);
+    //   res.render("recipe", { data: results });
+    //   console.log({ data: results });
+    //});
+    db.Recipe.findOne({
+      where: {
+        id: req.params.id
+      },
+      raw: true
+    }).then(data => {
+      console.log(data);
+      res.render("recipe", data);
+    });
+  });
+  app.get("/", (req, res) => {
+    db.Recipe.findAll({ raw: true }).then(data => {
+      res.render("home", { data: data });
+      console.log(data);
+    });
   });
 };
