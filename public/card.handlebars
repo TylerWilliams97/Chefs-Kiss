@@ -1,0 +1,31 @@
+    {{#each recipes}}
+<div class="col s12 m7">
+    <h2 class="header">Recipe Name</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <!-- this is a temporary placeholder image. needs to be replaced by actual search results -->
+        <img src="">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>
+            <ul class="collection">
+              <li class="collection-item">Recipe Title</li>
+                        <a>{{recipes.recipeName}}</a>
+              <li class="collection-item">Description</li>
+                        <a>{{recipes.description}}</a>
+              <li class="collection-item">Ingredients</li>
+                        <a>{{recipes.ingredients}}</a>
+              <li class="collection-item">Instructions</li>
+                        <a>{{recipes.instructions}}</a>
+            </ul>
+        {{/each}}
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="#">Want to see more?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+    {{/each}}
