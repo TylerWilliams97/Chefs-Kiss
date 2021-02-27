@@ -1,30 +1,41 @@
-// Requiring necessary npm packages
+// Dependencies
 const express = require("express");
-const session = require("express-session");
-// Requiring passport as we've configured it
-const passport = require("./config/passport");
+const exphbs = require("express-handlebars");
+const connection = require("./config/connection");
 
-// Setting up port and requiring models for syncing
+//Create instance of express app
+const app = express();
+//set PORT
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
-
-// Creating express app and configuring middleware needed for authentication
-const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
-// We need to use sessions to keep track of our user's login status
-app.use(
-  session({ secret: "keyboard cat", resave: true, saveUninitialized: true })
-);
-app.use(passport.initialize());
-app.use(passport.session());
+// Set HandleBars as default Engine
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+app.use(express.static(__dirname + "/public"));
+app.get("/", (req, res) => {
+  connection.query("SELECT * FROM `recipes`", (err, results) => {
+    if (err) {
+      throw err;
+    }
+    res.render("home", { data: results });
+    console.log({ data: results });
+  });
+});
 
-// Requiring our routes
-require("./routes/html-routes.js")(app);
+app.get("/recipe/:id", (req, res) => {
+  connection.query("SELECT * FROM `recipes` WHERE id = ``", (err, results) => {
+    if (err) {
+      throw err;
+    }
+    res.render("recipe", { data: results });
+    console.log({ data: results });
+  });
+});
+
 require("./routes/api-routes.js")(app);
 
-// Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(

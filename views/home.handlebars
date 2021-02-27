@@ -1,0 +1,78 @@
+  <!-- card for search form -->
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="card red darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">Post Recipe </span>
+          <p>
+          <form id="recipeForm">
+            <div class="form-group">
+              <label for="Recipe">Recipe</label>
+              <input type="recipeInput" class="form-control" id="recipeName"
+                placeholder="Insert Recipe Here">
+            </div>
+            <div class="form-group">
+              <label for="Description">Description</label>
+              <input type="descriptionInput" class="form-control" id="description"
+                placeholder="Insert Description Here">
+            </div>
+            <div class="form-group">
+              <label for="Ingredients">Ingredients</label>
+              <input type="ingredientInput" class="form-control" id="recipeIng"
+                placeholder="Insert Ingredients Here">
+            </div>
+            <div class="form-group">
+              <label for="instructionsInput">Instructions</label>
+              <textarea class="form-control" id="instructions" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="imageLinkInput">Image Link</label>
+              <input type="imgLinkInput" class="form-control" id="imgLinkInput" placeholder="Insert Image Link here">
+            </div>
+            <div class="card-action">
+              <div class="card-action ">
+              <button class="btn waves-effect waves-light amber darken-3" type="submit" name="action" id=""><span class="grey-text text-lighten-5">Post</span>
+                <i class="material-icons right"></i>
+              </button>
+            </div>
+          </form>
+          </p>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+<!--start of cards-->
+ {{#each data}}
+<div class="row">
+    <h2 class="header">{{this.recipeName}}</h2>
+    <div class="card horizontal">
+      <div class="card-image">
+        <!-- this is a temporary placeholder image. needs to be replaced by actual search results -->
+    
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSExIVFRUVFhUVFxUXFRcVFRUXFxUXFxcXFxcYHyggGBolHRcVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0lHyUtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAMgAyAMBEQACEQEDEQH/xAAaAAEAAgMBAAAAAAAAAAAAAAAAAQQCAwUG/8QAOxAAAgECAgcFBgUDBAMAAAAAAAECAxEEIQUSMUFRYZEiUnGBoQYTMrHB0RVCYpLhIzNyFILC8ENTsv/EABsBAQEAAwEBAQAAAAAAAAAAAAABAgMEBQYH/8QALxEBAAICAQQABQMDBAMAAAAAAAECAxEEBRIhMRMyQVFSIkJhBhQVFjORoTRxgf/aAAwDAQACEQMRAD8A90mdu3IXKJuEFIolSINsJ7iK2EVwfaXB5e8T2bedzowX1OmrJX6vMnY1gACUwhcGi4NFwFwCYGSkE0yTKiQgUAAAAB24YNx/tzlDlfWj+2X0sfm+HqWbF6n/AJfT3wY7+4bFiq0PigprjDKX7Xl6nq4OtVnxkhyX4X4y34fSNOeV9WXdktWXrt8j1cXLxZPls5L4L09wtnVtqSXYmLJI3qZirie0uJaioWyb2/Q6OPXztqyT9HmjragihkAACbAQBKiETqgSkQTYIyLCBkgAJsAFiK9SflD6oA11aEZK0knyeZlF5jzA0/6ecc6c2v0y7UejzXkz0MHVM2LxM7hpvx8d/cM1j5R/uQa/VHtR6bUe3g6viv4t4lx34do+VcpVoyV4tNcUerS8WjdZcdqzWdSz1zJjtzNPK9PwZvwzqzC7zuqde2pKiQLATYxm2vaxEywc48V1RqtycdfdobIw3n1Aprc+ibNU87jx7vDL+2y/iOS59H9hHUOPP74X+1y/ihVI95dTbXlYrerQ1zhyR7rLab4mJ9Ncxr2FQAAShtNJEyBNiSwA2PTXR+UvqksgAADRdivPCRecbxl3o5dePmdGHlZcU7rLG1K29ww9/Vh8S94uMcpecd/ke7xutRPjJDjycKJ81a8Tiozg7NOyzW9Zb09h7/HzUyeaS83LjtTxaHClK21nfa8Vjcy0RWZnUNuHwtSp8Ecu8+yv58jxuV1zj4fFf1T/AA7cfAvbzbw6FHQnfm/COS6u7PBz9e5F/k8Q76cLFX3G1unomivyJvjK8vmeZk5mfJ5taXRXHWvqFqnhYrZGK8Ekc85LT7lm2KCJ3So4E3KMJ4eLycU/JFi8x6kVKuiKL/Ik+Mbx+R04+bnx/LeWFsdbe4Vauhe5N+Es11WZ6eDr/Jp8+pc1+Dit6jShiMLUp5yjlxj2l0Wa6Hucbr2DL4v+mXFk6fePl8sY0ZvZTm/9tvnY3X63xK/uYRwMstn+irf+p/uj9znt/UPGj1tsjp1/rMMvw6t3I/v/AINc/wBR4fxll/jZ/JP4dW7kf3/wY/6jxfjJ/jZ/JP4dW7kf3/wX/UeL8ZP8bP5DwFdf+NP/AHL7Fj+o8P1iUnptvyduhWU0pRaaavdbD4+1Zr4l7DYYIMAAAAAKuOwMaieSUt0tj8brab8HIvituszCTEWjVvMNWF0TTjbWWu8s5W9FsRu5PUM+f57eGGPFTH8sL5xNiQJuFZEAoEAABGqAsBNgFgAEgAAHj8PUnSd6by3wfwvw4M/Quf0rFyY3HizwePzLY/E+Yd/A6RhUWV1JbYvavv4nxPK4eXjW7bw9rHkrkjdZXEcjMAAAAAAAAkABkiCQoAAWAmwAAACgQCgRIHjj9YfKMZwu07tNbJLJrwZoz4MeavbeNtuPLbHO6ytYfTM6eVXNd9f8luPlOd0O2PdsfmHsYObW/i3iXZo6QhLfb/vE8C+C1XdpZjJPNO/gatIkgAAAACQAGSCpIAAoEEgAoULEGMnZXLHlFanpGm9/U2zhtCrMKiexo1zWY9oyMR49H6u+UCKgksoaVBxd4O3FPOL+x53L6diz+Y8T93Zg5d8fj3C1h9IuO28Jd3c/8dzPmOV0++KdXjcfd6+Pk0yx78vS4dy1VrW1t6WxHi21vw2MzEAAAABKQGdiKAAAEgAAEFEkEMo8tjNaFScFFNXune2Tz+dz3+Bwbcqm6z69ufNyow/NDXGdXcox82/senXoU/us5bdTr9IWadetvq9Evrc2x0DB+6dtE9Sv9IVWz6B5qGRYQRUWC7b9H0tarBbleT8tnq0eD1/PFMHZ9Zeh0+kzabfZ6Y+IeuAAJAAEgM7EUsAAAAAEgAACwCxUcLTULVYvjFrzTVvmz6j+nMn67U/h53Ua7pE/ypn1zxmyK5EFVhWIUAAdL2fh2qkuGrFdNZ/NHxn9RZe7NWn2h7XArrHt2j513AEgAAE3AyuRQCQAEAAJAXChRJEQByNPR/tv9TXWLPd6Dft5Ovu4+bG8MqMYn3LwGcUQVGURqhUapA1RtXY0BD+k33pyfR6v0Pz/AKxfu5dv4fQ8WusUOkeW3gFTF6To0v7lWEfGSNtMN7/LAxwul8PUyhWhLkpK4vgyV9xK6n6LxqRkmFSQABQCgQCgENjSMY1oPLWjfxRlNbfYbUYABzNPx/pp92cX9Pqen0m/Zyay0civditDmn6C+bbaZJVRM0ADIqGyTOoZRHl3dDQtQp/4365n5tzLd2e8/wAvpMcarELhys3J0ysTOUaVHsRkm51u6uEV3jpwzjrHdbzP0gacL7KYWOcoe9m9s6j1m3x4Fty8s+p1H8Ccb7KYWosqahLdKHZafkKcvLWfM7GvR2Mq4eccPiHrqWVKts1v0y58zLJSuWvfj9/WFeiicYkgWKoAAAAKWltJQw9N1JvLYlvk9yXM24sU5LahHCo6MxWM7eIqSoUn8NGGUmv1y+h1Tmx4fGONz9xYfsThLWSmn3lOWt8zX/fZRjhsNicHOMVKVehKSWedSnfY+aLa2LNHnxb/AKkemOIVtJUNenKPFeq2epuwX7MkWSY3GnAoz1knxP0rDki9ItH1fMZadl5hvizZLBRuZBrBdJuQasRLJpXbd0ktrfBHPyc1cWOZtOm7Djm9o1D0mBbjTipLVskrN3tlxPznLHdeZjy+jhsdWMsozV+TTZj2zHmYVoqYerbs1c/1RT+VjOL0+tRz6VfF05WqQU4v80NnmnmjbNcNo8eF8OvhcTGautq2remc16TVGrSuAVenKDye2Mu7JbH1LiyTjttFrDxkoxUmnJJJtZJu2ZhaYmZmFbDECgFSAsETYgpYnRkKlWFWd26d9WL+FN/mtxW421yzWs1j6i6agAAAIZUedxVL3dWUfyyvKP8AyXXPzPs+hcvvx/Dn3DyOoYdT3wiJ9A8xSaMlQFTeyzMbTqNrEbnTdhpKlD30lec/gT2KO1X4cWfF9Q5NuVmmv7YfRcLjarqPalKGIrtyUXKyT7WSd+4nkcndTH4enXJix+Ijati8LWpWc4K2Tulkr7r8TKuStvTZTPjvPbp0tE6Zccm3KO9PNx5p71yNeXBW/mPbHNxo1ur1cGmk07p5pnnTGvDgFBLcNhkQZBQIAcTHSx6qNU40nDc27NeP8HVX+3mP1bHYw6nqrXtrWz1dl+Vzmtrf6fQ22MQAAAAACJSSV3kWI2OVX05BO0YuXNZLqzqrxbT7bq8e9nL0ppWMoqTi4uDuntVtjV/A9DgRbj5otE+GnlcS045230lfM+3idxt8rManSpVjY2DWFYV1dW4tR6tI5Obea4LTH2b+NXeSFnSVPXrxpLhGK5LbJ9EfD0v20m0vqsU9lJs9LTgkklsSSXgedM7nbma8Zh1UhKEtklbw5mVLTWdrEzE7h4GUJUaji9qdnzXH6nq1tExuHr4skXrt672dr3hKHdd14P8Am5xcqurRLg5Fe27so5HOBVfGyajrK/Z7VtzS2pmdIiZ1KIp4+D2vV5SWq/XaJx2GcsZBfmTfBZvoh8OwrVMdV1uzQk4722k/JGcY6a82VcoV1NZeaeTXJo1WrNUbDESAAAAAHmdOaR1m437EdtvzP7cj0sGKKxufbs4+KPns30NBuUItzcZPN8k18NnsfM125WrTphbk27tw14n2enqy1al9totXytkm+Ny15cfWE/uLTGpYYS8YxhJWkkk0+NvU+14XMw5aRFLeXy/JwXpaZmPDDEnoVcqvYyVrrbL8Gn0aZzcynfhtWPs3ce3bkiXewVJSqyq8oxXzfzSPzzLM1rFH0m/GnSsc7FIV5r2u0fdKtFZrKXhufl9Ts42T9sujjZO22vuseyuyb3WgvNJv6ocufTLlz+t37nG5QKxlC6s9jETpD3atZpW8B3SMoQS2JLwViTMz7GViDRWw9809WXFfJ8UZ1tr2MVOr3YPnrNelsi/oG+m3bNJPk7+tkYToZEAABU0pWcKUmttsvE24a914WsbmIeQwsVUr06e7WTfO3afyPRy27aTL0s/6cU6e6PJeYAa61CM1aSTX/dnAzpe1J3WdJMbeYqvNn6lHp8swaKMJqyfga8torSZlnSJm0RD0Gi6Hu6UI70k34vNn5xyLxfLa0fd9LWNRELiZzsk3GhhVpqUXFrJpp+ZYmYnYqaIw8acNRflbT5vj0sZ5bTadra02ncugaWIFAARKAkigAAAAAAOb7Qp+5dtzi/LWR0caf1tmKdXjby2hezioX7z9Yux2Z/8Abl38r/be7PLeYAAPMYqNpM/UqT4fLz7aTNixcNZxj3pxXle/0PP6pk7ONaXVw67yw9TY/PnvgUCAFao9WpF7p9l8mtj+nQzjzWY+yraZrRkYgAAASBJFAAAAAA1YmipxcXsaaMq27Z2PG4nDypzTtadNprmk75dD1ItXJR6MXjLj19XtaVRSipLY0mjypjU6ecyIAHlqk223xP1OI1D5ZjYqM8NH+tSXOT6RZ4nXba470Onx+uXoj4p7IAAAa8TS14tXzex8HtT6lidSGFquUU2rPY1wayfqLRqVb0zDSJIAACbASRQAyohASRQABpxWFhUVpxT+a8HuM6WtWfBEzHmFLR1WEJOjFtxXwt52e+N/XqbctZmO+SZ35dM5wA5c9ENZqx+lRnh83OKVSVCzsbYs1zVhShatS8Z//LPG65/4/wD9d/T/AJ5dw+NewAAAACvF6tS26ea/yW30+Rl7r/6VbVjWAEoiIZYBMSMrk0JChAAAAIlJLNmURscutiZVXqU/h3y+33Oqta443Y0s09HQUdX13prY0aZzTNtjbhqzd4yVpLo1xRjavjcIsGE/x6Fto+7h46vPBRee82fFmGHw4c3SmEUNSp3Zxv4PJ/M4uoTOTj2q38asVyLB8g9QAAAAGnF0taOW1WkvFGVZ1Ks6FZSSkt6v4GNo14G3WJpE6xNCG+RQsFSkREkEgRfmNKiU0t6RlFdihiNKwjknrS4L7m+uCZ9itTp1K7vJ2jwWz+TO1qYvXtXYo0lFWirI5LWm07lGZiNVeipW3NZp70Z1tNZGyN9+0xF4+7eMx1i6Tavj6evTlHinbx3epLU7qzC1tqYlQwdXXhGXFK/J7Gutz4vLTsvNfs9eJ3G241qAAAAivP4mg6dWerKUdZ6yaeWe1W2bb7t6O2kxasbZLGH0hNZSalztZmNsNZ9JpYjpRd1mHwP5NMvxOPB+hPgSmma0lDmT4Mro/E4cGPgSmkPSceDL8CTTVPSfCPUyjBH3XTTPHTe+3gbIxVg0ryk5bW36meohV7BaL3yVlw3s58mf6Qm3WjFJWSsjlmdokgAABY19RbsfePFNUbNIcC7NOP7v3VWUPyz7ceH611z8z53quDVviR9Xo8a+66WDx3QEUTKiQqAjCdNN3auyxMx6Faro6L2ZfLoZxmtHtdqNfBTjuuuKN9ctbMtq5sAom4EXAnyJsb8NhJT3WXEwvkrUdbC4SMN13xZyXyTZFq5qQAAAAAoun3bxgANinpXCucLx+OHaj4714NZGjkYoy0mrZiv2W28zQxstqfk/U+cviiJ1MPWjUxt0MPpFPKWXPcc9sP2NLyd8zTpikgACibE2qAjVVwsZbYmVb2r6lVSpovg+ptjkfeF21/hkuKMvjwbZ09Fd59DGeR9oNrVHAQjuv45mq2a0ptaUbGvYkAFTcIkgAAKuPxEoJWW3fwN2KlbT5HWPtXjhdokAB5rT+B923Wj8Mn2lwlsT8HvPN5nH7o74dvGy6ntlzTyXe34bFSg+K4Gu+OLJp26VRSSa3nFaJrOmDIgAABdiSBcgXAXAlSAawUuELhU3BsuBNwFwIkkwP//Z">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <p>
+              
+            <ul class="collection">
+              <li class="collection-item">Recipe Title</li>
+                        <a>{{this.recipeName}}</a>
+              <li class="collection-item">Description</li>
+                        <a>{{this.description}}</a>
+              <li class="collection-item">Ingredients</li>
+                        <a>{{this.ingredients}}</a>
+              <li class="collection-item">Instructions</li>
+                        <a>{{this.instructions}}</a>
+            </ul>
+       
+          </p>
+        </div>
+        <div class="card-action">
+          <a href="#">Want to see more?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ {{/each}}

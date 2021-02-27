@@ -1,0 +1,26 @@
+  {{#each data}}
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>{{this.recipeName}}</h2>
+      </div>
+    </div>
+
+  <div class="row">
+      <div class="row">
+          <div class="col-md-8">
+              <h2>Ingredients</h2>
+            <article>{{this.Ingredients}}</article>
+          </div>
+          <div class="col-md-4">
+              <img src="{{this.cloudLink}}" alt="">
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <h2>Instructions</h2>
+        <article>{{this.instructions}}</article>
+  </div>
+</div>
+ {{/data}}
