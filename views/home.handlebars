@@ -1,52 +1,49 @@
   <!-- card for search form -->
-  <div class="row">
+  <div class="row" id="topCard">
     <div class="col s12 m6">
-      <div class="card red darken-1">
+      <div class="card blue-grey darken-1">
         <div class="card-content white-text">
           <span class="card-title">Post Recipe </span>
           <p>
           <form id="recipeForm">
             <div class="form-group">
               <label for="Recipe">Recipe</label>
-              <input type="recipeInput" class="form-control" id="recipeName"
-                placeholder="Insert Recipe Here">
+              <input type="text" class="form-control white-text" id="recipeName" placeholder="Insert Recipe Here">
             </div>
             <div class="form-group">
               <label for="Description">Description</label>
-              <input type="descriptionInput" class="form-control" id="description"
-                placeholder="Insert Description Here">
+              <input type="text" class="form-control white-text" id="description" placeholder="Insert Description Here">
             </div>
             <div class="form-group">
               <label for="Ingredients">Ingredients</label>
-              <input type="ingredientInput" class="form-control" id="recipeIng"
-                placeholder="Insert Ingredients Here">
+              <input type="text" class="form-control white-text" id="instructions" placeholder="Insert Ingredients Here">
             </div>
             <div class="form-group">
-              <label for="instructionsInput">Instructions</label>
-              <textarea class="form-control" id="instructions" rows="4"></textarea>
+              <label for="Instructions">Instructions</label>
+              <input type="text" class="form-control white-text" id="recipeIng" placeholder="Insert Instructions Here">
             </div>
             <div class="form-group">
               <label for="imageLinkInput">Image Link</label>
-              <input type="imgLinkInput" class="form-control" id="imgLinkInput" placeholder="Insert Image Link here">
+              <input type="text" class="form-control white-text" id="imgLinkInput" placeholder="Insert Image Link here">
             </div>
             <div class="card-action">
-              <div class="card-action ">
-              <button class="btn waves-effect waves-light amber darken-3" type="submit" name="action" id=""><span class="grey-text text-lighten-5">Post</span>
+              <button class="btn waves-effect waves-light teal lighten-1" type="submit" name="action" id=""><span
+                  class="grey-text text-lighten-5">Post</span>
                 <i class="material-icons right"></i>
               </button>
             </div>
           </form>
           </p>
         </div>
-        
-        </div>
       </div>
     </div>
+  </div>
+
 <!--start of cards-->
  {{#each data}}
 <div class="row">
-    <h2 class="header">{{this.recipeName}}</h2>
     <div class="card horizontal">
+       <h2 class="header">{{this.recipeName}}</h2>
       <div class="card-image">
         <!-- this is a temporary placeholder image. needs to be replaced by actual search results -->
     
