@@ -1,7 +1,7 @@
 // Dependencies
 const express = require("express");
 const exphbs = require("express-handlebars");
-const connection = require("./config/connection");
+//const connection = require("./config/connection");
 
 //Create instance of express app
 const app = express();
