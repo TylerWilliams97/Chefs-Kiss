@@ -11,10 +11,9 @@ body {
 
 }
 .card {
-  /* opacity: .85; */
-  /* background-color: transparent !important; */
+
     /*setting alpha = 0.3*/ 
-    background-color: rgba(0, 151, 19, 0.6); 
+
     opacity: .85;
 
 
@@ -31,7 +30,4 @@ nav {
   /* opacity: .70; */
   height: 120%;
   background-color: transparent !important;
-}
-.materialize-textarea {
-width: auto;  
 }
