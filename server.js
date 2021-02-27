@@ -14,25 +14,6 @@ app.use(express.json());
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.use(express.static(__dirname + "/public"));
-app.get("/", (req, res) => {
-  connection.query("SELECT * FROM `recipes`", (err, results) => {
-    if (err) {
-      throw err;
-    }
-    res.render("home", { data: results });
-    console.log({ data: results });
-  });
-});
-
-app.get("/recipe/:id", (req, res) => {
-  connection.query("SELECT * FROM `recipes` WHERE id = ``", (err, results) => {
-    if (err) {
-      throw err;
-    }
-    res.render("recipe", { data: results });
-    console.log({ data: results });
-  });
-});
 
 require("./routes/api-routes.js")(app);
 
