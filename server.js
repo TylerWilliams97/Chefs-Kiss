@@ -1,6 +1,7 @@
 // Dependencies
 const express = require("express");
 const exphbs = require("express-handlebars");
+require("dotenv").config();
 //const connection = require("./config/connection");
 
 //Create instance of express app
