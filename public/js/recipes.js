@@ -25,6 +25,7 @@ const recipeName = document.getElementById("recipeName");
 const recipeIng = document.getElementById("recipeIng");
 const description = document.getElementById("description");
 const instructions = document.getElementById("instructions");
+const cloudLink = document.getElementById('file-upload');
 
 const recipeFormSubmit = e => {
   e.preventDefault();
@@ -41,7 +42,8 @@ const recipeFormSubmit = e => {
     recipeName: recipeName.value.trim(),
     description: description.value.trim(),
     recipeIng: recipeIng.value.trim(),
-    instructions: instructions.value.trim()
+    instructions: instructions.value.trim(),
+    cloudLink: cloudLink.value.json()
   };
   console.log(newRecipe);
   if (updating) {
