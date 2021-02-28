@@ -26,6 +26,8 @@ const recipeIng = document.getElementById("recipeIng");
 const description = document.getElementById("description");
 const instructions = document.getElementById("instructions");
 const cloudLink = document.getElementById('file-upload');
+const link = cloudLink.value.json();
+
 
 const recipeFormSubmit = e => {
   e.preventDefault();
