@@ -1,11 +1,7 @@
-# Chef's Kiss
+# [Chefs Kiss](https://chefs-kiss.herokuapp.com/)
 
 ## Project Description
     A place to share and find recipes. cooking made social and simple.
-
-## Heroku Link
-
-    PLACEHOLDER
 
 ## Roadmap
     Add images to Recipe cards
