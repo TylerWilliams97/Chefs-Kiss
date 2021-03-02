@@ -31,6 +31,10 @@ module.exports = (sequelize, Datatypes) => {
       validation: {
         len: [1, 1000]
       }
+    },
+    cloudLink: {
+      type: Datatypes.STRING,
+      allowNull: true
     }
   });
 

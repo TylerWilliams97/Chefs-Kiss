@@ -58,7 +58,8 @@ module.exports = app => {
       recipeName: req.body.recipeName,
       ingredients: req.body.ingredients,
       description: req.body.description,
-      instructions: req.body.instructions
+      instructions: req.body.instructions,
+      cloudLink: req.body.cloudLink
     }).then(results => {
       res.json(results);
       console.log(results);
