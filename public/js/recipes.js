@@ -24,7 +24,7 @@ const recipeIng = document.getElementById("recipeIng");
 const description = document.getElementById("description");
 const instructions = document.getElementById("instructions");
 const fileUpload = document.getElementById("file-upload");
-const image = document.getElementById("image");
+//const image = document.getElementById("image");
 const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dbgplg3re/upload";
 const CLOUDINARY_UPLOAD_PRESET = "hp6zbozi";
 const recipeFormSubmit = e => {
@@ -66,7 +66,7 @@ fileUpload.addEventListener("change", event => {
   })
     .then(res => {
       console.log(res);
-      const link = res.data.url;
+      //const link = res.data.url;
     })
     .catch(err => {
       console.log(err);
