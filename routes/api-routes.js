@@ -53,36 +53,76 @@ module.exports = app => {
   });
 
   app.post("/api/members/post", (req, res) => {
+    //sequlize create table and logs results
     // recipe_name , ingredients, description
     db.Recipe.create({
       recipeName: req.body.recipeName,
       ingredients: req.body.ingredients,
       description: req.body.description,
-      instructions: req.body.instructions
+      instructions: req.body.instructions,
+      cloudLink: req.body.cloudLink
     }).then(results => {
       res.json(results);
       console.log(results);
     });
   });
-
+  //get request to post recipes
   app.get("/api/recipes/post", (req, res) => {
-    Recipe.findall({}).then(result => {
+    db.Recipe.findAll({}).then(result => {
+      console.log(result);
       res.json(result);
     });
   });
-
-  // app.get("/api/recipes/post/:id", (req, res) => {
-  //   Recipie.findone({
-  //     where: {
-  //       id: req.params.id
-  //     }
-  //   }).then(result => res.json(result));
-  // });
-
+  //request to delete selcetion by id
   app.delete("/api/recipes/:id", req => {
     const id = req.params.id;
-    db.Recipies.destroy({
+    db.Recipe.destroy({
       where: { id }
     }).then(deletedRecipe => deletedRecipe);
   });
+  //get request to return info to recipe page
+  app.get("/recipe/:id", (req, res) => {
+    const id = req.params.id;
+    console.log(id);
+    db.Recipe.findOne({
+      where: {
+        id: req.params.id
+      },
+      raw: true
+    }).then(data => {
+      console.log(data);
+      res.render("recipe", data);
+    });
+  });
+  //get request to render main page
+  app.get("/", (req, res) => {
+    db.Recipe.findAll({ raw: true }).then(data => {
+      res.render("home", { data: data });
+      console.log(data);
+    });
+  });
 };
+//MOVED IMAGE POST ROUTE ~STILL NOT WORKING~
+//posting images to cloudinary and saving to database
+// recipeForm.addEventListener("submit", recipeFormSubmit);
+// fileUpload.addEventListener("change", event => {
+//   const file = event.target.files[0];
+//   const formData = new FormData();
+//   formData.append("file", file);
+//   formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+//   axios({
+//     url: CLOUDINARY_URL,
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/x-www-form-urlencoded"
+//     },
+//     data: formData
+//   })
+//     .then(res => {
+//       console.log(res);
+//       //const link = res.data.url;
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     });
+// });

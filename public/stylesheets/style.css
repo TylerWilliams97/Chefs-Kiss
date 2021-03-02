@@ -2,6 +2,7 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+<<<<<<< HEAD
 
 body {
   background-image: url('https://cdn.pixabay.com/photo/2014/10/22/16/38/ingredients-498199_1280.jpg');
@@ -17,23 +18,48 @@ body {
     opacity: .85;
 
 
+=======
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2014/10/22/16/38/ingredients-498199_1280.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.card {
+  /*setting alpha = 0.3*/
+  opacity: 0.85;
+>>>>>>> a2cb02a4b1fc12483a893869de057a63a7ae6f84
 }
 #logoImage {
   height: 100px;
   width: auto;
   max-height: 100px;
   max-width: 250px;
+<<<<<<< HEAD
   
 }
 
+=======
+}
+>>>>>>> a2cb02a4b1fc12483a893869de057a63a7ae6f84
 nav {
   /* opacity: .70; */
   height: 120%;
   background-color: transparent !important;
 }
+<<<<<<< HEAD
 
 /* #twitterIcon {
   height: 50%;
   width: 50%;
 } */
 
+=======
+#topCard {
+  margin-top: 25px;
+}
+>>>>>>> a2cb02a4b1fc12483a893869de057a63a7ae6f84

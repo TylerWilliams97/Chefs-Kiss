@@ -1,6 +1,5 @@
 let recipeId;
 const updating = false;
-console.log("thrther");
 // const getRecipeData = id => {
 //   fetch(`/api/recipes/post/${id}`, {
 //     method: "GET",
@@ -19,13 +18,15 @@ console.log("thrther");
 //     });
 // };
 // getRecipeData(recipeId);
-
 const recipeForm = document.getElementById("recipeForm");
 const recipeName = document.getElementById("recipeName");
 const recipeIng = document.getElementById("recipeIng");
 const description = document.getElementById("description");
 const instructions = document.getElementById("instructions");
-
+const fileUpload = document.getElementById("file-upload");
+//const image = document.getElementById("image");
+const CLOUDINARY_URL = "https://api.cloudinary.com/v1_1/dbgplg3re/upload";
+const CLOUDINARY_UPLOAD_PRESET = "hp6zbozi";
 const recipeFormSubmit = e => {
   e.preventDefault();
   console.log(recipeName.value);
@@ -35,7 +36,6 @@ const recipeFormSubmit = e => {
     alert("Your recipe is missing some content");
     return;
   }
-
   // Create a newPost object to send off to the backend
   const newRecipe = {
     recipeName: recipeName.value.trim(),
@@ -50,9 +50,28 @@ const recipeFormSubmit = e => {
     submitRecipe(newRecipe);
   }
 };
-
 recipeForm.addEventListener("submit", recipeFormSubmit);
-
+fileUpload.addEventListener("change", event => {
+  const file = event.target.files[0];
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+  axios({
+    url: CLOUDINARY_URL,
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    data: formData
+  })
+    .then(res => {
+      console.log(res);
+      //const link = res.data.url;
+    })
+    .catch(err => {
+      console.log(err);
+    });
+});
 const submitRecipe = recipe => {
   fetch("/api/members/post", {
     method: "POST",
