@@ -8,10 +8,10 @@ module.exports = (sequelize, Datatypes) => {
       }
     },
 
-    ingredients: {
+    ingredient: {
       type: Datatypes.STRING,
       allowNull: false,
-      defaultValue: "1",
+      defaultValue: "",
       validation: {
         len: [1, 1000]
       }
@@ -32,7 +32,6 @@ module.exports = (sequelize, Datatypes) => {
         len: [1, 1000]
       }
     },
-
     cloudLink: {
       type: Datatypes.STRING,
       allowNull: true

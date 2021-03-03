@@ -20,7 +20,7 @@ const updating = false;
 // getRecipeData(recipeId);
 const recipeForm = document.getElementById("recipeForm");
 const recipeName = document.getElementById("recipeName");
-const recipeIng = document.getElementById("recipeIng");
+const ingredient = document.getElementById("ingredient");
 const description = document.getElementById("description");
 const instructions = document.getElementById("instructions");
 const fileUpload = document.getElementById("file-upload");
@@ -31,7 +31,7 @@ const recipeFormSubmit = e => {
   e.preventDefault();
   console.log(recipeName.value);
   console.log(description.value);
-  console.log(recipeIng.value);
+  console.log(ingredient.value);
   if (!recipeName.value || !description.value) {
     alert("Your recipe is missing some content");
     return;
@@ -40,7 +40,7 @@ const recipeFormSubmit = e => {
   const newRecipe = {
     recipeName: recipeName.value.trim(),
     description: description.value.trim(),
-    recipeIng: recipeIng.value.trim(),
+    ingredient: ingredient.value.trim(),
     instructions: instructions.value.trim()
   };
   console.log(newRecipe);
