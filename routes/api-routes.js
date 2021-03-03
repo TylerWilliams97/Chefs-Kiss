@@ -57,7 +57,7 @@ module.exports = app => {
     // recipe_name , ingredients, description
     db.Recipe.create({
       recipeName: req.body.recipeName,
-      ingredients: req.body.ingredients,
+      ingredient: req.body.ingredient,
       description: req.body.description,
       instructions: req.body.instructions,
       cloudLink: req.body.cloudLink
